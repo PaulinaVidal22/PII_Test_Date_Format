@@ -1,8 +1,4 @@
-﻿using System.Diagnostics.Contracts;
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.InteropServices;
-using System.Xml.XPath;
-
+﻿
 namespace TestDateFormat;
 
 /// <summary>
