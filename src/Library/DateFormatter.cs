@@ -1,4 +1,6 @@
-﻿using System.Reflection.Metadata.Ecma335;
+﻿using System.Diagnostics.Contracts;
+using System.Reflection.Metadata.Ecma335;
+using System.Runtime.InteropServices;
 using System.Xml.XPath;
 
 namespace TestDateFormat;
@@ -16,7 +18,12 @@ public class DateFormatter
     /// </summary>
     /// <param name="date">Una fecha en formato "dd/mm/yyyy".</param>
     /// <returns>La fecha convertida al formato "yyyy-mm-dd".</returns>
+    
     public static string ChangeFormat(string date)
+    {
+        return date.Substring(6) + "-" + date.Substring(3, 2) + "-" + date.Substring(0, 2);
+    }
+    public static string CheckFormat(string date)
     {
         string result = "";
         if (date.Length == 10) 
@@ -37,7 +44,7 @@ public class DateFormatter
                 {
                     return "Error : Invalid Format";
                 } else {
-                    result = date.Substring(6) + "-" + date.Substring(3, 2) + "-" + date.Substring(0, 2);
+                    result = ChangeFormat(date);
                 }
 
         } else if (string.IsNullOrWhiteSpace(date))
