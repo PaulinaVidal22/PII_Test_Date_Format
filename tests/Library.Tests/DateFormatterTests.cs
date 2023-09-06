@@ -3,7 +3,7 @@ using TestDateFormat;
 
 namespace Library.Tests;
 
-public class DateFormatterTestsTests
+public class DateFormatterTests
 {
     [SetUp]
     public void Setup()
